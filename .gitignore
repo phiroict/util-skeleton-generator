@@ -1,2 +1,2 @@
 *.pyc
-current_CVEs.json
+**/current_CVEs.json

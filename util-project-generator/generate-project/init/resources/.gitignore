@@ -1,6 +1,3 @@
-*.pyc
-**/current_CVEs.json
-**/relevant_CVEs.md
 
 # Python
 *.py[cod]

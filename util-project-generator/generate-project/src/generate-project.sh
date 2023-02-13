@@ -62,13 +62,14 @@ function result_report
 
 function set_resources
 {
-  pwd
+  cd /src/src
   OUTPUT_DIR="${1}"
   UTIL_NAME="${2}"
   SCRIPT_DIR="${3}"
-  #echo "cp -rp  ${SCRIPT_DIR}/init/resources/   ${SCRIPT_DIR}/src/${UTIL_NAME}"
-  cp -rp "${SCRIPT_DIR}/init/resources/" "${SCRIPT_DIR}/src/${UTIL_NAME}"
-  find "${SCRIPT_DIR}/src/${UTIL_NAME}" -type f -exec sed -i '' 's/{{ UTILNAME }}/UTIL/g'  {} \;
+  # Using find here as mv and cp do unexpected things with wildcards, like not finding any files.
+  find "${SCRIPT_DIR}/init/resources" -type f -exec cp {} "${OUTPUT_DIR}/${UTIL_NAME}" \;
+  find "${OUTPUT_DIR}/${UTIL_NAME}" -type f -exec sed -i "s/{{ UTILNAME }}/$UTIL_NAME/g"  {} \;
+
 }
 
 create_skeleton "${UTIL_NAME}" "${DIRS}" "${OUTPUT_DIR}"

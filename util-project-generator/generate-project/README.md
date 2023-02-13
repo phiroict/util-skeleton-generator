@@ -14,7 +14,7 @@
 | Ownership        | Platform Team | 
 | Type             | Bash          | 
 | State            | Development   |
-| Template version | 0.1.0         | 
+| Template version | 0.1.0         |
 
 
 # Generated structure
@@ -46,6 +46,7 @@
 
 # Code usage
 
+## Direct
 The utility is called by
 ```bash
 cd src
@@ -54,6 +55,19 @@ bash ./generate-project.sh <utility_name> <utility_type> <test_result?> <output_
 # For instance   
 bash ./generate-project.sh "generate-utility" "bash" "true" "/tmp"
 ```
+
+## Through builder container. 
+
+This will use docker to run the script so no tools need to be installed on the system. 
+Run from `make` or copy the command from the make file. 
+
+```bash
+make rerun_container
+```
+Note you can set version and name of the utilities in the top two lines of the make file.
+You can copy the lines as well but note you need to replace $() values with the ones you want. 
+
+
 
 ## Params 
 

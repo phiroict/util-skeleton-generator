@@ -39,4 +39,24 @@
 
 # Code function 
 
+Call by 
+
+```bash
+
+```
+
+Example 
+```bash
+
+```
 > description of the code on a detailed level
+
+## PARAMS
+
+| Param name | Desc | Optional                   | 
+| --- | --- |----------------------------| 
+
+### ENV
+
+| ENv name                      | Desc                                 | Optional/Default                                         | 
+|-------------------------------|--------------------------------------|----------------------------------------------------------|
